@@ -1,0 +1,103 @@
+/* =========================================================
+    ESTILO DO SITE - Mapa de Polos
+    Autor: você 💪
+    Estilo: moderno, limpo e responsivo
+========================================================= */
+
+/* --- Fonte e Reset Básico --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ⚠️ ATENÇÃO: Usar um logo como background pode prejudicar a legibilidade ⚠️ */
+body {
+    /* 1. Define a imagem do logo SENAI como fundo */
+    background-image: url('SENAI.png'); /* Certifique-se que o nome do arquivo está correto */
+    
+    /* 2. Como a imagem vai se ajustar: */
+    background-size: cover;       /* A imagem cobrirá toda a área. Pode pixelizar se a imagem original for pequena. */
+    background-position: center;  /* Centraliza a imagem. */
+    background-repeat: no-repeat; /* Evita que o logo se repita. */
+    background-attachment: fixed; /* A imagem fica fixa ao rolar. */
+    
+    /* 3. Overlay (Camada de cor sobre o logo para tentar melhorar a legibilidade) */
+    /* Você pode ajustar a cor e a opacidade (último número do rgba) */
+    background-color: rgb(199, 214, 255); /* Fundo branco semi-transparente para clarear o logo e facilitar a leitura */
+    background-blend-mode: overlay; /* Mistura a cor de fundo com a imagem */
+    
+    /* Outros estilos existentes */
+    color: #333;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Título --- */
+h1 {
+    margin: 40px 0 20px 0;
+    font-weight: 600;
+    font-size: 2.2rem;
+    color: #1a237e; /* Cor do título */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* Um 'text-shadow' mais pronunciado ou uma cor mais contrastante pode ser necessária aqui */
+}
+
+/* --- Contêiner do Mapa --- */
+#map {
+    width: 90%;
+    max-width: 1200px;
+    height: 650px;
+
+    background-color: #fff; /* O mapa em si terá fundo branco, o que é bom */
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+
+    margin: 20px auto 60px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#map:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Rodapé Simples (caso queira adicionar depois) --- */
+footer {
+    margin-top: auto;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    color: #666;
+    /* Ajuste a cor do texto do rodapé se ele ficar ilegível */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        margin: 30px 0 10px 0;
+    }
+
+    #map {
+        width: 95%;
+        height: 420px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    #map {
+        height: 350px;
+    }
+}
