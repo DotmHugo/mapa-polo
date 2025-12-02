@@ -1,0 +1,149 @@
+/* =========================================================
+    ESTILO DO SITE - Mapa de Polos
+    Autor: você 💪
+    Estilo: moderno, limpo e responsivo
+========================================================= */
+
+/* --- Fonte e Reset Básico --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ⚠️ ATENÇÃO: Usar um logo como background pode prejudicar a legibilidade ⚠️ */
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    /* Overlay escuro para aumentar contraste com o texto */
+    background-color: rgba(0, 0, 0, 0.45);
+    background-blend-mode: multiply; /* multiply tende a escurecer a imagem */
+
+    /* Outros estilos existentes */
+    color: #fff;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Logo fixa no canto superior esquerdo --- */
+#senai-logo {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    width: 130px;
+    max-width: 22vw;
+    height: auto;
+    z-index: 9999;
+    pointer-events: none; /* evita que a imagem intercepte cliques no mapa */
+}
+
+@media (max-width: 480px) {
+    #senai-logo {
+        width: 90px;
+        top: 8px;
+        left: 8px;
+    }
+}
+
+/* --- Título --- */
+h1 {
+    margin: 40px 0 20px 0;
+    font-weight: 600;
+    font-size: 2.2rem;
+    color: #ffffff; /* Cor do título ajustada para branco */
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5); /* Sombra para legibilidade */
+}
+
+/* --- Parágrafo de Descrição --- */
+.description {
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 1.6;
+    width: 90%; /* Mesma largura do mapa */
+    max-width: 1200px; /* Mesma largura máxima do mapa */
+    padding: 0; /* Removemos o padding para que o alinhamento seja exato */
+    margin-bottom: 20px;
+    font-size: 1.2rem; /* Aumentei mais um pouco o tamanho da fonte */
+    text-align: justify; /* Alinhamento justificado para um visual mais limpo */
+    /* Sombra no texto para melhorar a legibilidade sobre a imagem de fundo */
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* --- Contêiner do Mapa --- */
+#map {
+    width: 90%;
+    max-width: 1200px;
+    height: 650px;
+
+    background-color: #fff; /* O mapa em si terá fundo branco, o que é bom */
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+
+    margin: 20px auto 60px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#map:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Rodapé Simples (caso queira adicionar depois) --- */
+footer {
+    margin-top: auto;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    color: #666;
+    /* Ajuste a cor do texto do rodapé se ele ficar ilegível */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        margin: 30px 0 10px 0;
+    }
+
+    #map {
+        width: 95%;
+        height: 420px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    #map {
+        height: 350px;
+    }
+}
+/* Remove o recuo gerado pelo <p> interno do Leaflet */
+.leaflet-popup-content p {
+    margin: 0 !important;
+}
+
+/* Remove a margem rígida que o Leaflet coloca por padrão */
+.leaflet-popup-content {
+    margin: 0 !important;
+    padding: 8px 14px !important; /* padding enxuto e alinhado */
+}
+
+/* Garante que o título não fique colado demais */
+.leaflet-popup-content strong {
+    display: block;
+    margin-bottom: 4px;
+}
